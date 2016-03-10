@@ -3,13 +3,13 @@
 one:
   name: MyString
   email: MyString
-  password: MyString
+  password_digest: MyString
   budget: 1
   income: 1
 
 two:
   name: MyString
   email: MyString
-  password: MyString
+  password_digest: MyString
   budget: 1
   income: 1
