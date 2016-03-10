@@ -1,0 +1,16 @@
+<h1>Add item</h1>
+
+<%= form_for @line_item do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :amount %>
+  <%= f.text_field :amount %>
+
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+
+  <%= f.label :date %>
+  <%= f.date_field :date %>
+
+<% end %>

@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   	
 
+  get 'line_items/new'
+
+  get 'line_items/show'
+
   get 'users' => 'users#new'
 
   post 'users' => 'users#create'
