@@ -1,3 +1,3 @@
 class Category < ActiveRecord::Base
-  belongs_to :line_item
+  has_many :line_item
 end

@@ -1,10 +1,12 @@
 class LineItemsController < ApplicationController
-  def new
+  def new #view
+    @categories = Category.all
     @line_item = LineItem.new
   end
 
   def create
-    @line_item = @current_user.line_item.create(post_params)
+    puts post_params
+    new_item = @current_user.line_item.create(post_params)
     redirect_to line_items_show_path
   end
 
@@ -15,6 +17,6 @@ class LineItemsController < ApplicationController
   private
 
   def post_params
-    params.require(:line_item).permit(:name, :amount, :description, :date)
+    params.require(:line_item).permit(:name, :amount, :description, :date, :category_id)
   end
 end
