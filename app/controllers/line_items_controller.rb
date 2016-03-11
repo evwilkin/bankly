@@ -12,6 +12,7 @@ class LineItemsController < ApplicationController
 
   def show
     @line_item = LineItem.all
+    @total = 0
   end
 
   private
