@@ -5,13 +5,17 @@
   <%= f.text_field :name %>
 
   <%= f.label :amount %>
-  <%= f.text_field :amount %>
+  <%= f.number_field :amount %>
 
   <%= f.label :description %>
   <%= f.text_field :description %>
 
   <%= f.label :date %>
   <%= f.date_field :date %>
+
+  <%= f.label :description %>
+  <%= f.select(:description, options_for_select([["Housing", 1], ["Transportation", 2], ["Bills", 3], ["Entertainment", 4], ["Education", 5], ["Food", 6], ["Miscellaneous", 7]])) %>
+
 
   <%= f.submit %>
 
