@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   post 'users' => 'users#create'
 
-  get 'users/show'
+  get 'profile' => "users#show", as: :users_show
 
   root 'main#index'
 

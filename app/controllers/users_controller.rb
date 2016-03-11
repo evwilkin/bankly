@@ -1,12 +1,15 @@
 class UsersController < ApplicationController
+  before_action :current_user
+
   def new
   	@user = User.new
   end
 
   def create
   	@user = User.create(user_params)
+    session[:user_id] = @user.id
   	flash[:success] = "You have successfully signed up!"
-  	redirect_to root_path
+  	redirect_to users_show_path
   end
 
   def show
