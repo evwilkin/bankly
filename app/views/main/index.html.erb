@@ -5,7 +5,7 @@
 				<div class='col-sm-8 col-sm-offset-2'>
 					<h1>Bankly</h1>
 					<p class='tag-line'>Some catchy tagline</p>
-					<% if !@user %>
+					<% if @user %>
 						<button class='btn-xlarge btn-primary', data-toggle="modal" href='#modal-id'>Login</button>
 							<br />
 						<p>New to the site? <%= link_to "Sign up", users_path, id: "sign_up" %></p>				
@@ -49,24 +49,21 @@
 					<h4 class="modal-title">Login</h4>
 				</div>
 				<div class="modal-body">
-					<%= form_for @user do |f| %>
-						<%= f.label :name %>
-						<%= f.text_field :name %>
+						<!-- <h1>Log in</h1> -->
 
-						<%= f.label :email %>
-						<%= f.text_field :email %>
-
-						<%= f.label :password %>
-						<%= f.password_field :password %>
-
-						<%= f.label :password_confirmation %>
-						<%= f.password_field :password_confirmation %>
-
+						<%= form_for :user, url: '/login' do |f| %>
+							<%= f.label :email %>
+							<%= f.text_field :email %>
+							<br />
+							<%= f.label :password %>
+							<%= f.password_field :password %>
+							
+							<%= f.submit "login" %>
 					<% end %>				
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save changes</button>
+					<button type="button" class="btn btn-primary">Submit</button>
 				</div>
 			</div>
 		</div>
