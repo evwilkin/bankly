@@ -2,14 +2,10 @@ Rails.application.routes.draw do
 
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
-
   get 'logout' => 'sessions#destroy'
 
-  	
-
-  get 'line_items/new'
-
-  get 'line_items/show'
+  get 'items' => 'line_items#new', as: :line_items
+  get 'items/show' => 'line_items#show'
 
   get 'users' => 'users#new'
 
