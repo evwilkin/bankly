@@ -18,6 +18,9 @@
  *= require_tree .
  */
 
+$btn-primary-bg: #21CE99 !default;
+$btn-border-radius-base: 0;
+
 @import "bootstrap";
 @import "bootstrap-sprockets";
 @import "main";
