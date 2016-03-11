@@ -13,8 +13,8 @@
   <%= f.label :date %>
   <%= f.date_field :date %>
 
-  <%= f.label :description %>
-  <%= f.select(:description, options_for_select([["Housing", 1], ["Transportation", 2], ["Bills", 3], ["Entertainment", 4], ["Education", 5], ["Food", 6], ["Miscellaneous", 7]])) %>
+  <%= f.label :category_id %>
+  <%= f.select :category_id, options_from_collection_for_select(@categories, 'id', 'name' %>
 
 
   <%= f.submit %>

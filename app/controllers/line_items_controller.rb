@@ -5,6 +5,7 @@ class LineItemsController < ApplicationController
 
   def create
     @line_item = @current_user.line_item.create(post_params)
+    @categories = Category.all
     redirect_to line_items_show_path
   end
 
