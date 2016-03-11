@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def create
   	@user = User.create(user_params)
+  	flash[:success] = "You have successfully signed up!"
   	redirect_to root_path
   end
 

@@ -1,9 +1,9 @@
 <h1>All of <%= @current_user.name %>'s Items </h1>
 
-<% @line_item.each do |item| %>
+<% @current_user.line_item.each do |item| %>
 	<div>
 		<ul>
-			<%= item.name %>
+			<%= item.name %> $<%= item.amount %> <%= item.description %>	<%= item.date %>	
 		</ul>
 	</div>
 <% end %>
