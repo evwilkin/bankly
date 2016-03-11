@@ -1,52 +1,75 @@
-
-<%= link_to "Sign up", users_path %>
-<%= link_to "Login", login_path %>
-<%= link_to "Logout", logout_path %>
-<%= link_to "Add Item", line_items_path %>
-
 <div class="main">
 	<div id="fullpage">
-	<div class="section">
-		<h1>Bankly</h1>
-		<p>Some catchy tagline</p>
-		<% if !@user %>
-		<%= link_to "Login", login_path, class: "btn btn-primary", id: "login" %>
-			<br />
-		<p>New to the site? <%= link_to "Sign up", users_path, id: "sign_up" %></p>
-			
-		<% end %>
-
-		<% if @user %>
-			<p>Logged in as <%= @user.name %></p>
-			<%= link_to "Logout", logout_path %>
-			<%= link_to "Add Item", line_items_path %>
-		<% end %>
-	</div>
-	<div class="section">
-		<h1>About</h1>
-		<div id="profiles">
-			<div class="profile">
-				<div class="profilepic" id="mark"></div>
-				<p>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua.</p>
+		<div class="section">
+			<div class='row text-center'>
+				<div class='col-sm-8 col-sm-offset-2'>
+					<h1>Bankly</h1>
+					<p class='tag-line'>Some catchy tagline</p>
+					<% if !@user %>
+						<button class='btn-xlarge btn-primary', data-toggle="modal" href='#modal-id'>Login</button>
+							<br />
+						<p>New to the site? <%= link_to "Sign up", users_path, id: "sign_up" %></p>				
+					<% end %>
+				</div>
 			</div>
-			<div class="profile">
-				<div class="profilepic" id="audrey"></div>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-			</div>
-			<div class="profile">
-				<div class="profilepic" id="evan"></div>
-				<p>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-			</div>
-			<div class="profile">
-				<div class="profilepic" id="alexa"></div>
-				<p>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+		</div>
+		<div class="section hidden-xs">
+			<div class='row text-center'>
+				<h1>About</h1>
+				<div id="profiles">
+					<div class="col-sm-3">
+						<div class="profilepic" id="mark"></div>
+						<p>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua.</p>
+					</div>
+					<div class="profile col-sm-3">
+						<div class="profilepic" id="audrey"></div>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+					</div>
+					<div class="profile col-sm-3">
+						<div class="profilepic" id="evan"></div>
+						<p>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+					</div>
+					<div class="profile col-sm-3">
+						<div class="profilepic" id="alexa"></div>
+						<p>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
+	<div class="modal fade" id="modal-id">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">Login</h4>
+				</div>
+				<div class="modal-body">
+					<%= form_for @user do |f| %>
+						<%= f.label :name %>
+						<%= f.text_field :name %>
+
+						<%= f.label :email %>
+						<%= f.text_field :email %>
+
+						<%= f.label :password %>
+						<%= f.password_field :password %>
+
+						<%= f.label :password_confirmation %>
+						<%= f.password_field :password_confirmation %>
+
+					<% end %>				
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 
