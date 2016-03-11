@@ -5,12 +5,14 @@ class ApplicationController < ActionController::Base
   before_action :current_user
 
   def is_authenticated?
-  	unless session[:user_id]
-  		flash[:danger] = "Not logged in"
-  		redirect_to login_path
-  	end
+  	unless current_user
+     flash[:warning] = 'You need to login to access your profile'
+     redirect_to login_path
+   end
   end
+
   def current_user
   	@current_user ||= User.find_by_id(session[:user_id])
   end
 end
+

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :current_user
+before_action :is_authenticated?, except: [:new]
+
 
   def new
   	@user = User.new
