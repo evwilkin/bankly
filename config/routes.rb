@@ -2,9 +2,7 @@ Rails.application.routes.draw do
 
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
-
   get 'logout' => 'sessions#destroy'
-
   	
 
   # get 'line_items' => 'line_items#new'
@@ -13,6 +11,7 @@ Rails.application.routes.draw do
   get 'items' => 'line_items#new', as: :line_items
   post 'items' => 'line_items#create'
   get 'items/show' => 'line_items#show', as: :line_items_show
+
 
   get 'users' => 'users#new'
 
