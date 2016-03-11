@@ -1,15 +1,15 @@
 class LineItemsController < ApplicationController
   def new
-    @line_item = Line_item.new
+    @line_item = LineItem.new
   end
 
   def create
-    @line_item = @current_user.line_items.create(post_params)
+    @line_item = @current_user.line_item.create(post_params)
     redirect_to line_items_show_path
   end
 
   def show
-    @line_item = Line_item.all
+    @line_item = LineItem.all
   end
 
   private
