@@ -14,7 +14,6 @@ Rails.application.routes.draw do
 
 
   get 'users' => 'users#new'
-
   post 'users' => 'users#create'
 
   get 'users/show'
