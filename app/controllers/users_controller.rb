@@ -14,6 +14,8 @@ before_action :is_authenticated?, except: [:new]
   end
 
   def show
+    @category = Category.all
+    @items = current_user.line_item
   end
 
   private
