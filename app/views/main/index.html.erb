@@ -1,5 +1,45 @@
-<%= link_to "Sign up", users_path %>
-<%= link_to "Login", login_path %>
-<%= link_to "Logout", logout_path %>
-<%= link_to "Add Item", line_items_path %>
-<p>Logged in as <%= @user.name %></p>
+<div class="main">
+	<div id="fullpage">
+	<div class="section">
+		<h1>Bankly</h1>
+		<p>Some catchy tagline</p>
+		<% if !@user %>
+		<%= link_to "Login", login_path, class: "btn btn-primary", id: "login" %>
+			<br />
+		<p>New to the site? <%= link_to "Sign up", users_path, id: "sign_up" %></p>
+			
+		<% end %>
+
+		<% if @user %>
+			<p>Logged in as <%= @user.name %></p>
+			<%= link_to "Logout", logout_path %>
+			<%= link_to "Add Item", line_items_path %>
+		<% end %>
+	</div>
+	<div class="section">
+		<h1>About</h1>
+		<div id="profiles">
+			<div class="profile">
+				<div class="profilepic" id="mark"></div>
+				<p>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua.</p>
+			</div>
+			<div class="profile">
+				<div class="profilepic" id="audrey"></div>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+			</div>
+			<div class="profile">
+				<div class="profilepic" id="evan"></div>
+				<p>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+			</div>
+			<div class="profile">
+				<div class="profilepic" id="alexa"></div>
+				<p>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
