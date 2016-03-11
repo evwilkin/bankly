@@ -1,6 +1,6 @@
 class LineItemsController < ApplicationController
   def new
-    @line_item = Line_item.new
+    @line_item = LineItem.new
   end
 
   def create
@@ -9,7 +9,7 @@ class LineItemsController < ApplicationController
   end
 
   def show
-    @line_item = Line_item.all
+    @line_item = LineItem.all
   end
 
   private
