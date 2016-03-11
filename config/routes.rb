@@ -7,9 +7,12 @@ Rails.application.routes.draw do
 
   	
 
-  get 'line_items/new'
+  # get 'line_items' => 'line_items#new'
+  # post 'line_items' => 'line_items#create'
 
-  get 'line_items/show'
+  get 'items' => 'line_items#new', as: :line_items
+  post 'items' => 'line_items#create'
+  get 'items/show' => 'line_items#show', as: :line_items_show
 
   get 'users' => 'users#new'
 

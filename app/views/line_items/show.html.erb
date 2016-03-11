@@ -1,2 +1,9 @@
-<h1>LineItems#show</h1>
-<p>Find me in app/views/line_items/show.html.erb</p>
+<h1>All of <%= @current_user.name %>'s Items </h1>
+
+<% @line_item.each do |item| %>
+	<div>
+		<ul>
+			<%= item.name %>
+		</ul>
+	</div>
+<% end %>
