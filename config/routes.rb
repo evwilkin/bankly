@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   get 'profile' => "users#show", as: :users_show
 
+  get 'dashboard' => "dashboard#index"
+
   root 'main#index'
 
 
