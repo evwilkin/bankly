@@ -15,6 +15,11 @@ class LineItemsController < ApplicationController
     @total = 0
   end
 
+  def destroy
+    Line_item.find(params[:id]).destroy
+    redirect_to users_show_path
+  end
+
   private
 
   def post_params
