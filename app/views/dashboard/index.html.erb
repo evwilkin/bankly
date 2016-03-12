@@ -29,3 +29,13 @@
 			</div>
 		</div>
 	</div>
+
+	<% @categories.each do |c| %>
+	  <% total = 0 %>
+	  <h2><%= c.name %></h2>
+
+	  <% @items.where("category_id = "+c.id.to_s).each do |i| %>
+	    <% total += i.amount %>
+	  <% end %>
+	  <p>Total: <%= number_to_currency(total) %></p>
+	<% end %>
