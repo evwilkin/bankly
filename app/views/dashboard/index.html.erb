@@ -3,15 +3,11 @@
 <button class='btn-xlarge btn-primary', data-toggle="modal" href='#modal-id1'>Add item</button>
 <a href="/logout"><button method="destroy" class='btn-xlarge btn-primary'>Logout</button></a>
 
-<form >
-<select name="monthSelect" onchange="this.form.submit(value)">
-	<option value="">Select a Month</option>
-	<option value="1">January</option>
-	<option value="2">February</option>
-	<option value="3">March</option>
-</select>
-<noscript><input type="submit" value="Submit"></noscript>
-</form>
+<%= form_tag('', method: "get") do %>
+  <%= label_tag(:q, "Search by Month & Year") %>
+  <%= month_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
 
 <div class="modal fade" id="modal-id1">
 		<div class="modal-dialog">
@@ -46,7 +42,7 @@
 	  <% total = 0 %>
 	  <h2><%= c.name %></h2>
 
-	  <% @items.where('extract(month from date) = ?', @month_select || @month).where("category_id = "+c.id.to_s).each do |i| %>
+	  <% @items.where('extract(month from date) = ?', @month || @current_month).where('extract(year from date) = ?', @year || @current_year).where("category_id = "+c.id.to_s).each do |i| %>
 	    <% total += i.amount %>
 	  <% end %>
 	  <p>Total: <%= number_to_currency(total) %></p>
