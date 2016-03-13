@@ -27,11 +27,14 @@
         </td>
       </tr>
     <% end %>
+</tbody>
+<tfoot>
     <td><h3>Total</h3></td>
     <td></td>
     <td></td>
     <td></td>
     <td> <h3><%= number_to_currency(total) %></h3> </td>
-</tbody>
+</tfoot>
+</table>
 <%= link_to "Add Item", line_items_path %>
 <%= link_to "Profile", users_show_path %>
