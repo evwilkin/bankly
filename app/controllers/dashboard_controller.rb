@@ -5,5 +5,9 @@ class DashboardController < ApplicationController
   	@line_item = LineItem.new
     @items = current_user.line_item
     @month = Time.now.strftime("%m")
+    @month_select = params['monthSelect']
+    @m = Time.now.strftime("%m")
+    @d = Time.now.strftime("%d")
+    @y = Time.now.strftime("%Y")
   end
 end

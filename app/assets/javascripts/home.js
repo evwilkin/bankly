@@ -12,4 +12,3 @@ $(document).ready(function() {
 
     $('#line_items').dataTable();
 });
-
