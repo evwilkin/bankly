@@ -14,7 +14,10 @@
 //= require jquery_ujs
 //= require dataTables/jquery.dataTables
 //= require_tree .
-//=require bootstrap-sprockets
+//= require bootstrap-sprockets
+//= require rails.validations
+
+
 
 
 
