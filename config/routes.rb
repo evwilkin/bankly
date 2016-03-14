@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  # resources :line_items
+
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   get 'logout' => 'sessions#destroy'
@@ -10,7 +12,11 @@ Rails.application.routes.draw do
 
   get 'items' => 'line_items#new', as: :line_items
   post 'items' => 'line_items#create'
-  get 'items/show' => 'line_items#show', as: :line_items_show
+  # get '/line_items/:id(.:format)' => 'line_items#show', as: :items_show
+  get '/items/show' => 'line_items#show', as: :line_items_show
+  get '/line_items/:id/edit(.:format)' => 'line_items#edit', as: :line_items_edit
+  delete '/line_items/:id(.:format)' => 'line_items#destroy', as: :line_items_delete
+
 
 
   get 'users' => 'users#new'
@@ -22,6 +28,25 @@ Rails.application.routes.draw do
 
   root 'main#index'
 
+
+
+# line_items_path GET /line_items(.:format) line_items#index
+# POST  /line_items(.:format) line_items#create
+# new_line_item_path  GET /line_items/new(.:format) line_items#new
+# edit_line_item_path GET /line_items/:id/edit(.:format)  line_items#edit
+# line_item_path  GET /line_items/:id(.:format) line_items#show
+# PATCH /line_items/:id(.:format) line_items#update
+# PUT /line_items/:id(.:format) line_items#update
+# DELETE  /line_items/:id(.:format) line_items#destroy
+# login_path  GET /login(.:format)  sessions#new
+# POST  /login(.:format)  sessions#create
+# logout_path GET /logout(.:format) sessions#destroy
+# DELETE  /line_items/:id(.:format) line_items#destroy
+# users_path  GET /users(.:format)  users#new
+# POST  /users(.:format)  users#create
+# users_show_path GET /profile(.:format)  users#show
+# dashboard_path  GET /dashboard(.:format)  dashboard#index
+# root_path GET / main#index
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
