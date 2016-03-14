@@ -10,7 +10,7 @@ before_action :is_authenticated?, except: [:new, :create]
   	@user = User.create(user_params)
     session[:user_id] = @user.id
   	flash[:success] = "You have successfully signed up!"
-  	redirect_to users_show_path
+  	redirect_to dashboard_path
   end
 
   def show
@@ -20,6 +20,6 @@ before_action :is_authenticated?, except: [:new, :create]
   private
 
   def user_params
-  	params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  	params.require(:user).permit(:name, :email, :password, :password_confirmation, :budget, :income)
   end
 end
