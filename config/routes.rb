@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'items' => 'line_items#new', as: :line_items
   post 'items' => 'line_items#create'
   get 'items/show' => 'line_items#show', as: :line_items_show
+  get 'item' => 'line_items#item', as: :item
 
 
   get 'users' => 'users#new'

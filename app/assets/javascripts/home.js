@@ -10,6 +10,15 @@ $(document).ready(function() {
     $('#line_items').dataTable();
     var ctx = $("#myChart").get(0).getContext("2d");
     var myDoughnutChart = new Chart(ctx).Doughnut(chartData);
+
+			$("#myChart").click( 
+        function(evt){
+            var activePoints = myDoughnutChart.getSegmentsAtEvent(evt);
+            var category = activePoints[0].label;
+            var url = "http://example.com/?label=" + activePoints[0].label + "&value=" + activePoints[0].value;
+            $.get()
+        }
+    );       
 });
 
 var chartData = [
