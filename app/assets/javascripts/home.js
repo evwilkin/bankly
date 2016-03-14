@@ -14,44 +14,44 @@ $(document).ready(function() {
 
 var chartData = [
     {
-        value: 300,
-        color:"#F7464A",
+        value: '$',
+        color:"#20CE99",
         highlight: "#FF5A5E",
         label: "Housing"
     },
     {
-        value: 50,
-        color: "#46BFBD",
+        value: '$',
+        color: "#74FFD5",
         highlight: "#5AD3D1",
         label: "Transportation"
     },
     {
-        value: 100,
-        color: "#FDB45C",
+        value: '$',
+        color: "#28FFBD",
         highlight: "#FFC870",
         label: "Bills"
     },
     {
-        value: 300,
-        color:"#F7464A",
+        value: '$',
+        color:"#3A7F6A",
         highlight: "#FF5A5E",
         label: "Entertainment"
     },
     {
-        value: 50,
-        color: "#46BFBD",
+        value: '$',
+        color: "#20CC98",
         highlight: "#5AD3D1",
         label: "Education"
     },
     {
-        value: 100,
-        color: "#FDB45C",
+        value: '$',
+        color: "#083628",
         highlight: "#FFC870",
         label: "Food"
     },
     {
-        value: 100,
-        color: "#FDB45C",
+        value: '$',
+        color: "#000000",
         highlight: "#FFC870",
         label: "Miscellaneous"
     }
