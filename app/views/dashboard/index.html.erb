@@ -28,6 +28,13 @@
 
 	<h2>Today's date: <%= Time.now.strftime("%b %d, %Y") %></h2>
 
+<canvas id="myChart" class="chart" width="400" height="400"></canvas>
+
+<%= javascript_tag do %>
+	counter = 0;
+<% end %>
+
+<div id="dashboardData">
 	<% @categories.each do |c| %>
 	  <% total = 0 %>
 	  <h2><%= c.name %></h2>
@@ -36,4 +43,11 @@
 	    <% total += i.amount %>
 	  <% end %>
 	  <p>Total: <%= number_to_currency(total) %></p>
+
+	  <%= javascript_tag do %>
+			chartData[counter].value = <%= total %>;
+			counter += 1;
+		<% end %>
+
 	<% end %>
+</div>
