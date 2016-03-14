@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   	user = User.authenticate(user_params[:email], user_params[:password])
   	if user 
   		session[:user_id] = user.id
-  		flash[:success] = "You have logged in!"
+  		# flash[:success] = "You have logged in!"
   		redirect_to dashboard_path
   	else
   		flash[:danger] = "You have not been logged in."
@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
 
   def destroy 
   	session[:user_id] = nil
-  	flash[:success] = "Logged out"
+  	# flash[:success] = "Logged out"
   	redirect_to root_path
   end
 
