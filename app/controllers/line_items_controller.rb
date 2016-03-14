@@ -13,12 +13,15 @@ class LineItemsController < ApplicationController
   def show
     @line_item = LineItem.all
     @total = 0
-    
+  end
+
+  def edit
+    @line_item = LineItem.find(params[:id])
   end
 
   def destroy
-    Line_item.find(params[:id]).destroy
-    redirect_to users_show_path
+    LineItem.find(params[:id]).delete
+    redirect_to line_items_show_path
   end
 
   private
