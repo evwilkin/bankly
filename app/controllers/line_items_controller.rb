@@ -7,7 +7,7 @@ class LineItemsController < ApplicationController
   def create
     puts post_params
     new_item = @current_user.line_item.create(post_params)
-    redirect_to line_items_show_path
+    redirect_to dashboard_path
   end
 
   def show

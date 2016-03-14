@@ -3,8 +3,8 @@
 <!-- <button class='btn-xlarge btn-primary', data-toggle="modal" href='#modal-id1'>Add item</button> -->
 <!-- <a href="/logout"><button method="destroy" class='btn-xlarge btn-primary'>Logout</button></a> -->
 
-
-
+<div class = 'row'>
+	<div class = 'col-sm-8 col-sm-offset-2 text-center'
 <%= form_tag('', method: "get") do %>
   <%= label_tag(:q, "Search by Month & Year") %>
   <%= month_field_tag(:q) %>
@@ -30,24 +30,44 @@
 
 <canvas id="myChart" class="chart" width="400" height="400"></canvas>
 
-<%= javascript_tag do %>
-	counter = 0;
-<% end %>
+<br>
 
-<div id="dashboardData">
-	<% @categories.each do |c| %>
-	  <% total = 0 %>
-	  <h2><%= c.name %></h2>
+<button class = 'btn btn-primary' href='#modal-id3' data-toggle="modal">Add Item</button>
+<button class="btn btn-primary" data-toggle="modal" href='#modal-id'>View all</button>
+</div>
+		<div class="modal fade" id="modal-id">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title">Spending Total</h4>
+					</div>
+					<div class="modal-body">
+						<%= javascript_tag do %>
+							counter = 0;
+						<% end %>
 
-	  <% @items.where('extract(month from date) = ?', @month || @current_month).where('extract(year from date) = ?', @year || @current_year).where("category_id = "+c.id.to_s).each do |i| %>
-	    <% total += i.amount %>
-	  <% end %>
-	  <p>Total: <%= number_to_currency(total) %></p>
+					<div id="dashboardData">
+						<% @categories.each do |c| %>
+						  <% total = 0 %>
+						  <h2><%= c.name %></h2>
 
-	  <%= javascript_tag do %>
-			chartData[counter].value = <%= total %>;
-			counter += 1;
-		<% end %>
+						  <% @items.where('extract(month from date) = ?', @month || @current_month).where('extract(year from date) = ?', @year || @current_year).where("category_id = "+c.id.to_s).each do |i| %>
+						    <% total += i.amount %>
+						  <% end %>
+						  <p>Total: <%= number_to_currency(total) %></p>
 
-	<% end %>
+						  <%= javascript_tag do %>
+								chartData[counter].value = <%= total %>;
+								counter += 1;
+							<% end %>
+
+						<% end %>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
 </div>
