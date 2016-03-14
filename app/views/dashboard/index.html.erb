@@ -3,32 +3,8 @@
 <!-- <button class='btn-xlarge btn-primary', data-toggle="modal" href='#modal-id1'>Add item</button> -->
 <!-- <a href="/logout"><button method="destroy" class='btn-xlarge btn-primary'>Logout</button></a> -->
 
-<div class="modal fade" id="modal-id1">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title">Add Items</h4>
-				</div>
-				
-				<div class="modal-body">
-						<!-- <h1>Log in</h1> -->
 
-						<%= bootstrap_form_for :line_item, url: '/items' do |f| %>
-							<%= f.text_field :name %>
-							<%= f.number_field :amount %>
-							<%= f.text_field :description %>
-							<%= f.date_field :date %>
-							<%= f.select :category_id, options_from_collection_for_select(@categories, 'id', 'name') %>
-							
-							<%= f.submit "Add item", class: "btn btn-primary" %>
-					<% end %>				
-				</div>
-				<div class="modal-footer">
-				</div>
-			</div>
-		</div>
-	</div>
+
 
 	<% @categories.each do |c| %>
 	  <% total = 0 %>

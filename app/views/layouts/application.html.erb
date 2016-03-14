@@ -12,6 +12,10 @@
   <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet' type='text/css'>
 </head>
 <body>
+
+
+
+
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -34,9 +38,9 @@
       
       <ul class="nav navbar-nav navbar-right">
         <% if @current_user %>
-          <li class="active"><a href="/dashboard">Dashboard</a></li>
-          <li><a href='#modal-id1' data-toggle="modal">Add Item</a></li>
-          <li><a href="/items/show">My Items</a></li>
+          <li class="<%= 'active' if params[:controller] == 'dashboard' %>"><a href="/dashboard">Dashboard</a></li>
+          <li class="<%= 'active' if params[:controller] == 'line_items' %>"><a href="/items/show">My Items</a></li>
+          <li ><a href='#modal-id3' data-toggle="modal">Add Item</a></li>
           <li><a href="/logout">Logout</a></li>
         <% end %>
         
@@ -48,6 +52,29 @@
 		<%= render "layouts/flash" %>
 		<%= yield %>
 	</div>
+
+ <div class="modal fade" id="modal-id3">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Add Items</h4>
+        </div>
+        
+        <div class="modal-body">
+          <!-- <h1>Log in</h1> -->  
+          <%= bootstrap_form_for line_item, url: '/items' do |f| %>
+            <%= f.text_field :name %>
+            <%= f.number_field :amount %>
+            <%= f.text_field :description %>
+            <%= f.date_field :date %>
+            <%= f.select :category_id, options_from_collection_for_select(categories, 'id', 'name') %>
+            <%= f.submit "Add item", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
   
 </body>
 </html>
