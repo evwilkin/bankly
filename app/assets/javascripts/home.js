@@ -7,18 +7,25 @@ $(document).ready(function() {
     css3: true
   });
 
+    // $(".editbutton").click(function(e) {
+    //     var target = $(e.target)
+    //     console.log(target.data('test'))
+    //     $("#line_item_name").val(target.data('name'))
+    // });
+
     $('#line_items').dataTable();
     var ctx = $("#myChart").get(0).getContext("2d");
     var myDoughnutChart = new Chart(ctx).Doughnut(chartData);
 
-		$("#myChart").click( 
+
+	$("#myChart").click( 
       function(evt){
         var activePoints = myDoughnutChart.getSegmentsAtEvent(evt);
         var category = activePoints[0].label;
         $.get("/category/"+category, function(data){
         	$('.modal-body-item').html(data);
         	$('#modal-item').modal();
-        })
+        });
       }
     );       
 });

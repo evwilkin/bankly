@@ -14,19 +14,43 @@
 </thead>
 <tbody>
     <% total = 0 %>
+    <% id = 0 %>
     <% @current_user.line_item.each do |item| %>
-      <tr>
+      <tr class="rData" >
         <td> <%= item.date %>  </td>
         <td> <%= item.name %> </td>
         <td> <%= item.description %> </td>
         <td> <%= item.category.name %>  </td>  
         <td> 
              <%= number_to_currency(item.amount) %> 
-             <% total+= item.amount %>   
+             <% total += item.amount %>   
         </td>
-        <td> <%= link_to 'Edit', line_items_edit_path(item) %></td>
+        <td> <button class = 'btn btn-primary editbutton' href='#modal-id<%= item.id %>' data-toggle="modal" id="<%= item.id %>">Edit Item</button>
         <td> <%= link_to 'Delete', line_items_delete_path(item), method: :delete, :class => 'delete' %></td>
       </tr>
+<div class="modal fade" id="modal-id<%= item.id %>">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Edit Items</h4>
+        </div>
+        
+        <div class="modal-body">
+          <!-- <h1>Log in</h1> -->  
+          <%= bootstrap_form_for line_item, url: '/items/'+item.id.to_s, method: 'put' do |f| %>
+            <%= f.text_field :name, value: item.name %>
+            <%= f.number_field :amount, value: item.amount %>
+            <%= f.text_field :description, value: item.description %>
+            <%= f.date_field :date, value: item.date %>
+            <%= f.select :category_id, options_from_collection_for_select(categories, 'id', 'name', item.category.id) %>
+            <%= f.submit "Submit edit", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+      <% id = id+1 %>
     <% end %>
 </tbody>
 <tfoot>
@@ -39,5 +63,6 @@
     <td> <h3><%= number_to_currency(total) %></h3> </td>
 </tfoot>
 </table>
-<a href='#modal-id3' data-toggle="modal" class="btn btn-xlarge btn-primary">Add item</a>
-<%= link_to "Profile", users_show_path %>
+<a href='#modal-id3' data-toggle="modal" href="line_items_edit_path(item)" class="btn btn-xlarge btn-primary">Add item</a>
+
+
