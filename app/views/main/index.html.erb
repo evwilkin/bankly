@@ -4,12 +4,15 @@
 			<div class='row text-center main-page'>
 				<div class='col-sm-8 col-sm-offset-2'>
 					<h1>Bankly</h1>
-					<p class='tag-line'>Some catchy tagline</p>
+					<p class='tag-line'>Visualize your spending</p>
 					<% if !@user %>
 						<button class='btn-xlarge btn-primary', data-toggle="modal" href='#modal-id1'>Login</button>
 							<br />
 						<p>New to the site? <a href='#modal-id2', data-toggle='modal'>Sign up!</a></p>				
 					<% end %>
+					<div id="circlearrow" class="row center-block">
+					<div id="arrow" class="row center-block"></div>
+					</div>
 				</div>
 			</div>
 		</div>
