@@ -22,10 +22,11 @@
 
 $btn-primary-bg: #21CE99 !default;
 $btn-border-radius-base: 0;
-$navbar-default-color: white !default;
-$navbar-default-bg: #21CE99 !default;
-$navbar-default-link-color: white !default;
+$navbar-default-color: #21CE99 !default;
+$navbar-default-bg: white !default;
+$navbar-default-link-color: #21CE99 !default;
 $font-family-sans-serif: "Oxygen" !default;
+$navbar-default-border: none !default;
 
 @import "bootstrap";
 @import "bootstrap-sprockets";
