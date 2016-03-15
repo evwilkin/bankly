@@ -32,19 +32,13 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav navbar-nav">
-       
-      </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <% if @current_user %>
           <li class="<%= 'active' if params[:controller] == 'dashboard' %>"><a href="/dashboard">Dashboard</a></li>
           <li class="<%= 'active' if params[:controller] == 'line_items' %>"><a href="/items/show">My Items</a></li>
           <li class="<%= 'active' if params[:controller] == 'users' %>"><a href='/profile'>Profile</a></li>
           <li><a href="/logout">Logout</a></li>
-
-        <% end %>
-        
+        <% end %>      
       </ul>
     </div><!-- /.navbar-collapse -->
   </div>
@@ -61,10 +55,8 @@
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           <h4 class="modal-title">Add Items</h4>
         </div>
-        
         <div class="modal-body-add-item">
           <!-- <h1>Log in</h1> -->  
-
         </div>
       </div>
     </div>
