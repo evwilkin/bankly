@@ -10,7 +10,9 @@
   <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Arya' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+	<meta name="viewport" content="width=device-width" />
 </head>
 <body>
 <nav class="navbar navbar-default" role="navigation">
@@ -38,7 +40,7 @@
         <% if @current_user %>
           <li class="<%= 'active' if params[:controller] == 'dashboard' %>"><a href="/dashboard">Dashboard</a></li>
           <li class="<%= 'active' if params[:controller] == 'line_items' %>"><a href="/items/show">My Items</a></li>
-          <li id='profilenav'><a href=#>Profile</a></li>
+          <li class="<%= 'active' if params[:controller] == 'users' %>"><a href='/profile'>Profile</a></li>
           <li><a href="/logout">Logout</a></li>
 
         <% end %>
