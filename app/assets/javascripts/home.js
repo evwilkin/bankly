@@ -22,15 +22,6 @@ $(document).ready(function() {
         });
       }
     );
-    
-    $('#profilenav').click(
-    	function(evt){
-    	$.get("/profile", function(data){
-    		$('.modal-body-profile').html(data);
-    		$('#modal-id4').modal();
-    	});
-    	}
-    )   
 
     $('#additem').click(
     	function(evt){
