@@ -14,7 +14,18 @@ before_action :is_authenticated?, except: [:new, :create]
   end
 
   def show
+<<<<<<< HEAD
   	render layout: false, template: "/users/show"
+=======
+  end
+
+  def patch
+    uploaded_file = params[:picture].path
+    cloudinary_file = Cloudinary::Uploader.upload(uploaded_file)
+    @current_user.picture = cloudinary_file['public_id']
+    @current_user.save
+    redirect_to users_show_path
+>>>>>>> pictures
   end
 
   private

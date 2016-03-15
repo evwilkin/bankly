@@ -33,6 +33,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'client_side_validations'
 gem "nested_form"
 
+gem 'cloudinary'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
