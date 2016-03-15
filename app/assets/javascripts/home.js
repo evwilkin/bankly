@@ -7,18 +7,12 @@ $(document).ready(function() {
     css3: true
   });
 
-    // $(".editbutton").click(function(e) {
-    //     var target = $(e.target)
-    //     console.log(target.data('test'))
-    //     $("#line_item_name").val(target.data('name'))
-    // });
-
     $('#line_items').dataTable();
     var ctx = $("#myChart").get(0).getContext("2d");
     var myDoughnutChart = new Chart(ctx).Doughnut(chartData);
 
 
-		$("#myChart").click( 
+		$("#myChart").mouseup( 
       function(evt){
         var activePoints = myDoughnutChart.getSegmentsAtEvent(evt);
         var category = activePoints[0].label;
@@ -28,15 +22,6 @@ $(document).ready(function() {
         });
       }
     );
-    
-    $('#profilenav').click(
-    	function(evt){
-    	$.get("/profile", function(data){
-    		$('.modal-body-profile').html(data);
-    		$('#modal-id4').modal();
-    	});
-    	}
-    )   
 
     $('#additem').click(
     	function(evt){
@@ -57,7 +42,7 @@ var chartData = [
     },
     {
         value: '$',
-        color:"#3A7F6A",
+        color:"#083628",
         highlight: "#558999",
         label: "Transportation"
     },
@@ -75,7 +60,7 @@ var chartData = [
     },
     {
         value: '$',
-        color: "#083628",
+        color: "#3A7F6A",
         highlight: "#28FFBD",
         label: "Education"
     },
