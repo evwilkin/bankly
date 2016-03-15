@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   post 'users' => 'users#create'
 
   get 'profile' => "users#show", as: :users_show
+  patch 'profile' => "users#patch", as: :users_patch
 
   get 'dashboard' => "dashboard#index"
 
