@@ -15,8 +15,13 @@ class LineItemsController < ApplicationController
     @total = 0
   end
 
+
   def edit
     @line_item = LineItem.find(params[:id])
+  end
+
+  def show_modal
+
   end
 
   def destroy
