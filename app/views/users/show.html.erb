@@ -1,7 +1,10 @@
 <h1>Users#show</h1>
 <p>Find me in app/views/users/show.html.erb</p>
 
-
+<%= cl_image_tag(@current_user.picture,
+  :width => 250, :height => 250,
+  :crop => :fill, :gravity => :face)
+%>
 
 <%= bootstrap_form_tag url: '/profile', :method => :patch do |f| %>
   <%= f.file_field :picture %>
