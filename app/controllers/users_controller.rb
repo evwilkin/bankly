@@ -14,7 +14,13 @@ before_action :is_authenticated?, except: [:new, :create]
   end
 
   def show
+
+  end
+
+  def patch
+    uploaded_file = params[:picture].path
     
+    render json: uploaded_file
   end
 
   private

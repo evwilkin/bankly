@@ -2,6 +2,6 @@
 <p>Find me in app/views/users/show.html.erb</p>
 
 <%= bootstrap_form_tag url: '/profile', :method => :patch do |f| %>
-  <%= f.email_field :email, value: 'name@example.com' %>
+  <%= f.file_field :picture %>
   <%= f.submit %>
 <% end %>
