@@ -1,11 +1,12 @@
-<div class = 'row'>
-	<div class = 'col-sm-8 col-sm-offset-2 text-center'>
+<div class="row">
+	<div class="col-sm-8 col-sm-offset-2 text-center">
 		<%= form_tag('', method: "get") do %>
 		  <%= label_tag(:q, "Search by Month & Year") %>
 		  <%= month_field_tag(:q) %>
 		  <%= submit_tag("Search") %>
 		<% end %>
 		<h2>Today's date: <%= Time.now.strftime("%b %d, %Y") %></h2>
+
 		<div class='chart responsive center-block'>
 			<canvas id="myChart" class="chart responsive text-center" width="400" height="400"></canvas>
 		</div>
@@ -13,6 +14,8 @@
 		<button class = 'btn btn-primary' href='#modal-id3' data-toggle="modal" id='additem'>Add Item</button>
 		<button class="btn btn-primary" data-toggle="modal" href='#modal-id'>View all</button>
 	</div>
+
+
 	<div class="modal fade col-sm-8 col-sm-offset-2 col-xs-12" id="modal-id">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -28,17 +31,19 @@
 						<div id="dashboardData">
 						<thead>
 							<tr>
-							<th colspan = "1">Category</th>
-							<th colspan = "1">Total</th>
+								<th colspan = "1">Category</th>
+								<th colspan = "1">Total</th>
 							</tr>
+							
 						</thead>
 							<% @categories.each do |c| %>
 							  <% total = 0 %>
 							  <tr>
-							  	<td><%= c.name %></h2>
-
+							  	<td><%= c.name %></h2></td>
+							 
 							  <% @items.where('extract(month from date) = ?', @month || @current_month).where('extract(year from date) = ?', @year || @current_year).where("category_id = "+c.id.to_s).each do |i| %>
 							    <% total += i.amount %>
+							    <% @total_expenses += i.amount %>
 							  <% end %>
 							  	<td><%= number_to_currency(total) %></td>
 
@@ -46,8 +51,11 @@
 									chartData[counter].value = <%= total %>;
 									counter += 1;
 								<% end %>
-
 							<% end %>
+								<tr>
+									<td>Total Expenses</td>
+									<td><%= number_to_currency(@total_expenses) %> </td>
+								
 						</div>
 					</table>
 					</div>
@@ -75,3 +83,22 @@
 		</div>
 	</div>
 </div>
+
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2 text-center">
+				<h1>Your monthly budget is <%= number_to_currency(current_user.budget) %></h1>
+				<!-- <p>		Budget to expense ratio: <%= current_user.budget.to_f /  @total_expenses.to_f %>
+				</p> -->
+
+				<p> <h3> AND </h3>
+				
+					<% if current_user.budget > @total_expenses %>
+								<p><h2> You are UNDER budget by <%= current_user.budget.to_f - @total_expenses.to_f %></h2></p>
+						<% elsif %>
+							   <p><h2>You are OVER budget by <%= number_to_currency(@total_expenses.to_f - current_user.budget.to_f) %></h2></p>
+						<%else%>
+								 <p><h2>Please edit your budget</h2></p>
+					<% end %>
+				
+			</div>
+		</div>
