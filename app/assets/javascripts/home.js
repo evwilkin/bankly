@@ -7,7 +7,9 @@ $(document).ready(function() {
     css3: true
   });
 
-    $('#line_items').dataTable();
+    $('#line_items').dataTable({
+    	responsive: true
+    });
     var ctx = $("#myChart").get(0).getContext("2d");
     var myDoughnutChart = new Chart(ctx).Doughnut(chartData);
 
@@ -30,7 +32,8 @@ $(document).ready(function() {
     		$('#modal-id3').modal();
     	});
     	}
-    )     
+    )  
+
 });
 
 var chartData = [

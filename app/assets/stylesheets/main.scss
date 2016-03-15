@@ -82,6 +82,9 @@
 		}
 }
 
+#line_items{
+	width: 100% !important;
+}
 
 .main{
 	margin-top: -86px;
@@ -136,4 +139,17 @@
 	.modal-dialog{
 		width: 90%;
 	}
+	.navbar-default {
+		.active{
+			border-bottom: none;
+		}
+	}
+/*	.sub_navlist {
+		position: absolute;
+		right: 0;
+		z-index: 1;
+	}
+	#navlist{
+		display: relative;
+	}*/
 }
