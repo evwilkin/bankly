@@ -18,9 +18,10 @@ before_action :is_authenticated?, except: [:new, :create]
   end
 
   def patch
+    @user = @current_user
     uploaded_file = params[:picture].path
-    
-    render json: uploaded_file
+    cloudinary_file = Cloudinary::Uploader.upload(uploaded_file)
+    render json: cloudinary_file
   end
 
   private
