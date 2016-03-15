@@ -14,7 +14,7 @@ before_action :is_authenticated?, except: [:new, :create]
   end
 
   def show
-
+    
   end
 
   private
