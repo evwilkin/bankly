@@ -1,6 +1,7 @@
-<h1><%= current_user.name %>'s profile</h1>
 
-<p> Email: <%= current_user.email %></p>
-<p> Monthly Budget: <%= current_user.budget %></p>
-<p> Monthly Income: <%= current_user.income %></p>
-
+<div class='col-12-sm text-center'>
+	<h1><%= current_user.name %>'s profile</h1>
+	<p> Email: <%= current_user.email %></p>
+	<p> Monthly Budget: <%= number_to_currency(current_user.budget) %></p>
+	<p> Monthly Income: <%= number_to_currency(current_user.income) %></p>
+</div>

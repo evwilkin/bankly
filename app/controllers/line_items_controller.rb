@@ -2,6 +2,7 @@ class LineItemsController < ApplicationController
   def new #view
     @categories = Category.all
     @line_item = LineItem.new
+    render layout: false
   end
 
   def create
