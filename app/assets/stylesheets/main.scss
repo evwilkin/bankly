@@ -29,7 +29,7 @@
 
 	p {
 		margin-top: -1px;
-		font-family: "Anton";
+		/*font-family: "Anton";*/
 	}
 
 	#profiles {
@@ -57,4 +57,12 @@
 				background-image: url("/assets/Alexa_Heitzenrader.jpg");
 			}
 		}
+}
+
+.main{
+	margin-top: -86px;
+}
+
+.logo{
+	font-weight: bold;
 }
