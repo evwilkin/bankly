@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get '/line_items/:id/edit(.:format)' => 'line_items#edit', as: :line_items_edit
   delete '/line_items/:id(.:format)' => 'line_items#destroy', as: :line_items_delete
 
-  get 'category' => 'line_items#item', as: :category
+  get 'category/:category_name' => 'line_items#category', as: :category
 
 
   get 'users' => 'users#new'

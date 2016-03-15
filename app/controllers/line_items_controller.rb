@@ -20,8 +20,11 @@ class LineItemsController < ApplicationController
     @line_item = LineItem.find(params[:id])
   end
 
-  def show_modal
-
+  def category
+  	category = params[:category_name]
+  	@category_list = Category.find_by_name(category)
+  	@list = @current_user.line_item.where(category_id: @category_list.id)
+  	render layout: false, template: "line_items/category"
   end
 
   def destroy
