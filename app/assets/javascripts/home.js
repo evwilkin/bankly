@@ -42,7 +42,7 @@ var chartData = [
     },
     {
         value: '$',
-        color:"#3A7F6A",
+        color:"#083628",
         highlight: "#558999",
         label: "Transportation"
     },
@@ -60,7 +60,7 @@ var chartData = [
     },
     {
         value: '$',
-        color: "#083628",
+        color: "#3A7F6A",
         highlight: "#28FFBD",
         label: "Education"
     },

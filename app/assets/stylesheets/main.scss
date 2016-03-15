@@ -115,6 +115,15 @@
 	height: 400px;
 }
 
+.navbar-default {
+	.active{
+		border-bottom: 4px solid #21CE99;
+	}
+/*	li:hover{
+		border-bottom: 4px solid #21CE99;
+	}*/
+}
+
 @media(max-width:800px) {
   .chart{
   	width: 300px;
