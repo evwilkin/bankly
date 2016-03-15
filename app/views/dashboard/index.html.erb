@@ -6,7 +6,9 @@
 		  <%= submit_tag("Search") %>
 		<% end %>
 		<h2>Today's date: <%= Time.now.strftime("%b %d, %Y") %></h2>
-		<canvas id="myChart" class="chart" width="400" height="400"></canvas>
+		<div class='chart responsive center-block'>
+			<canvas id="myChart" class="chart responsive text-center" width="400" height="400"></canvas>
+		</div>
 		<br>
 		<button class = 'btn btn-primary' href='#modal-id3' data-toggle="modal">Add Item</button>
 		<button class="btn btn-primary" data-toggle="modal" href='#modal-id'>View all</button>

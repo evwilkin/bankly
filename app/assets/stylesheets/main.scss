@@ -85,3 +85,15 @@
   text-align: left;
   vertical-align: middle;
 }
+
+.chart{
+	width: 400px;
+	height: 400px;
+}
+
+@media(max-width:800px) {
+  .chart{
+  	width: 300px;
+  	height: 300px;
+	}
+}
