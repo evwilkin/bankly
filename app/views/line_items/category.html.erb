@@ -12,7 +12,7 @@
 		<td><%= item.date %></td>
 		<td><%= item.name %></td>
 		<td><%= item.description %></td>
-		<td><%= item.amount %></td>
+		<td><%= number_to_currency(item.amount) %></td>
 	</tr>
 <% end %>
 </table>

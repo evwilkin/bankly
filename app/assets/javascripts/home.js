@@ -33,37 +33,37 @@ $(document).ready(function() {
 var chartData = [
     {
         value: '$',
-        color:"#20CE99",
+        color: "#28FFBD",
         highlight: "#0C9ECC",
         label: "Housing"
     },
     {
         value: '$',
-        color: "#74FFD5",
+        color:"#3A7F6A",
         highlight: "#558999",
         label: "Transportation"
     },
     {
         value: '$',
-        color: "#28FFBD",
+        color:"#20CE99",
         highlight: "#0C9ECC",
         label: "Bills"
     },
     {
         value: '$',
-        color:"#3A7F6A",
+        color: "#74FFD5",
         highlight: "#558999",
         label: "Entertainment"
     },
     {
         value: '$',
-        color: "#20CC98",
+        color: "#083628",
         highlight: "#28FFBD",
         label: "Education"
     },
     {
         value: '$',
-        color: "#083628",
+        color: "#20CC98",
         highlight: "#558999",
         label: "Food"
     },
