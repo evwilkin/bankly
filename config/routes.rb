@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   get 'items' => 'line_items#new', as: :line_items
   post 'items' => 'line_items#create'
+  put 'items/:id' => 'line_items#update'
   # get '/line_items/:id(.:format)' => 'line_items#show', as: :items_show
   get '/items/show' => 'line_items#show', as: :line_items_show
   get '/line_items/:id/edit(.:format)' => 'line_items#edit', as: :line_items_edit

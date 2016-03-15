@@ -19,6 +19,12 @@ class LineItemsController < ApplicationController
     @line_item = LineItem.find(params[:id])
   end
 
+  def update
+    @item = LineItem.find(params[:id])
+    @item.update(post_params)
+    redirect_to line_items_show_path
+  end 
+
   def destroy
     LineItem.find(params[:id]).delete
     redirect_to line_items_show_path
