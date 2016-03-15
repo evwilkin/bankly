@@ -1,13 +1,13 @@
 
 <div class='col-12-sm text-center'>
-	<h1><%= current_user.name %>'s profile</h1>
-	<p> Email: <%= current_user.email %></p>
-	<p> Monthly Budget: <%= number_to_currency(current_user.budget) %></p>
-	<p> Monthly Income: <%= number_to_currency(current_user.income) %></p>
   <%= cl_image_tag(@current_user.picture,
-    :width => 250, :height => 250,
-    :crop => :fill, :gravity => :face)
+    :width => 200, :height => 200, :radius => :max,
+    :crop => :thumb, :gravity => :face)
   %>
+  <h1><%= current_user.name %>'s profile</h1>
+  <p> Email: <%= current_user.email %></p>
+  <p> Monthly Budget: <%= number_to_currency(current_user.budget) %></p>
+  <p> Monthly Income: <%= number_to_currency(current_user.income) %></p>
 
   <%= bootstrap_form_tag url: '/profile', :method => :patch do |f| %>
     <%= f.file_field :picture %>
