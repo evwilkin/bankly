@@ -14,7 +14,7 @@ before_action :is_authenticated?, except: [:new, :create]
   end
 
   def show
-
+  	render layout: false, template: "/users/show"
   end
 
   private

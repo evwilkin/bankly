@@ -36,7 +36,7 @@
         <% if @current_user %>
           <li class="<%= 'active' if params[:controller] == 'dashboard' %>"><a href="/dashboard">Dashboard</a></li>
           <li class="<%= 'active' if params[:controller] == 'line_items' %>"><a href="/items/show">My Items</a></li>
-          <li ><a href='/profile'>Profile</a></li>
+          <li id='profilenav'><a href=#>Profile</a></li>
           <li><a href="/logout">Logout</a></li>
 
         <% end %>
@@ -58,16 +58,24 @@
           <h4 class="modal-title">Add Items</h4>
         </div>
         
-        <div class="modal-body">
+        <div class="modal-body-add-item">
           <!-- <h1>Log in</h1> -->  
-          <%= bootstrap_form_for line_item, url: '/items' do |f| %>
-            <%= f.text_field :name, :required => true %>
-            <%= f.number_field :amount, :required => true %>
-            <%= f.text_field :description, :required => true %>
-            <%= f.date_field :date, :required => true %>
-            <%= f.select :category_id, options_from_collection_for_select(categories, 'id', 'name') %>
-            <%= f.submit "Add item", class: "btn btn-primary" %>
-          <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="modal-id4">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Profile</h4>
+        </div>
+        
+        <div class="modal-body-profile">
+          <!-- <h1>Log in</h1> -->  
+
         </div>
       </div>
     </div>
