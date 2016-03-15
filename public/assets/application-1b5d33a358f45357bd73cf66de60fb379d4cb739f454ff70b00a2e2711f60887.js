@@ -26572,12 +26572,20 @@ return jQuery;
       scaleFontColor: "#666",
 
       // Boolean - whether or not the chart should be responsive and resize when the browser does.
-      responsive: false,
+      responsive: $(window).resize(function(){
+				if ($(window).width() <= 800){	
+					responsive: return true
+				}else{
+					responsive: return false
+				}
+			}),
+
 
       // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
       maintainAspectRatio: true,
 
       // Boolean - Determines whether to draw tooltips on the canvas or not - attaches events to touchmove & mousemove
+      
       showTooltips: true,
 
       // Boolean - Determines whether to draw built-in tooltip or call custom tooltip function
@@ -30215,45 +30223,63 @@ $(document).ready(function() {
     css3: true
   });
 
+    // $(".editbutton").click(function(e) {
+    //     var target = $(e.target)
+    //     console.log(target.data('test'))
+    //     $("#line_item_name").val(target.data('name'))
+    // });
+
     $('#line_items').dataTable();
     var ctx = $("#myChart").get(0).getContext("2d");
     var myDoughnutChart = new Chart(ctx).Doughnut(chartData);
+
+
+	$("#myChart").click( 
+      function(evt){
+        var activePoints = myDoughnutChart.getSegmentsAtEvent(evt);
+        var category = activePoints[0].label;
+        $.get("/category/"+category, function(data){
+        	$('.modal-body-item').html(data);
+        	$('#modal-item').modal();
+        });
+      }
+    );       
 });
 
 var chartData = [
     {
         value: '$',
-        color:"#20CE99",
+        color: "#28FFBD",
         highlight: "#0C9ECC",
         label: "Housing"
     },
     {
         value: '$',
-        color: "#74FFD5",
+        color:"#3A7F6A",
         highlight: "#558999",
         label: "Transportation"
     },
     {
         value: '$',
-        color: "#28FFBD",
+        color:"#20CE99",
         highlight: "#0C9ECC",
         label: "Bills"
     },
     {
         value: '$',
-        color:"#3A7F6A",
+        color: "#74FFD5",
         highlight: "#558999",
         label: "Entertainment"
     },
     {
         value: '$',
-        color: "#20CC98",
+        color: "#083628",
         highlight: "#28FFBD",
         label: "Education"
     },
     {
         value: '$',
-        color: "#083628",
+        color: "#20CC98",
         highlight: "#558999",
         label: "Food"
     },
