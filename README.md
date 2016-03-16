@@ -37,5 +37,11 @@
 **Unsolved problems**
 
 
+**Major Hurdles**
+* Discovering why our production environment and test environment were inconsistent
+* Writing user uploads to the user database while rendering correctly using Cloudinary
+*  Accessing the users database(which holds existing information) and adding more user information without deleting the users account
+* Overriding bootstrap styles
 
-![alt tag](/images/frontendbankly.jpg)
+
+![alt tag](assets/images/frontendbankly.jpg)
