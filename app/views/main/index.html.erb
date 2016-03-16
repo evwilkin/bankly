@@ -101,8 +101,8 @@
 					<%= bootstrap_form_for :user, url: '/users' do |f| %>
 						<%= f.text_field :name %>
 						<%= f.text_field :email %>
-	  				<%= f.number_field :budget %>
-	  				<%= f.number_field :income %>
+	  				<%= f.number_field :"Monthly Budget" %>
+	  				<%= f.number_field :"Monthly Income" %>
 						<%= f.password_field :password %>
 						<%= f.password_field :password_confirmation %>
 						
