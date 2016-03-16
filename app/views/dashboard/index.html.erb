@@ -1,21 +1,5 @@
-<div class="row">
-	<div class="col-sm-8 col-sm-offset-2 text-center">
-		<%= form_tag('', method: "get") do %>
-		  <%= label_tag(:q, "Search by Month & Year") %>
-		  <%= month_field_tag(:q) %>
-		  <%= submit_tag("Search") %>
-		<% end %>
-		<h2>Today's date: <%= Time.now.strftime("%b %d, %Y") %></h2>
-
-		<div class='chart responsive center-block'>
-			<canvas id="myChart" class="chart responsive text-center" width="400" height="400"></canvas>
-		</div>
-		<br>
-		<button class = 'btn btn-primary' href='#modal-id3' data-toggle="modal" id='additem'>Add Item</button>
-		<button class="btn btn-primary" data-toggle="modal" href='#modal-id'>View all</button>
-	</div>
-
-
+<!-- Modals -->
+	
 	<div class="modal fade col-sm-8 col-sm-offset-2 col-xs-12" id="modal-id">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -54,11 +38,12 @@
 							<% end %>
 								<tr>
 									<td>Total Expenses</td>
-									<td><%= number_to_currency(@total_expenses) %> </td>
-								
+									<td><%= number_to_currency(@total_expenses) %> </td>	
 						</div>
 					</table>
 					</div>
+
+
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 					</div>
@@ -66,25 +51,49 @@
 			</div>
 		</div>
 	</div>
+
 	<div class="modal fade col-sm-8 col-sm-offset-2 col-xs-12" id="modal-item">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					
 				</div>
-				<div class="modal-body-item">
-					
-				</div>
+				<div class="modal-body-item"></div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
+
 		
-		<div class="row">
+<!-- Page  -->
+		
+<div id="fullpage">
+	<div class="section">
+		<div class="expense">
+		<div class="row text-center main-page">
+			<div class="col-sm-8 col-sm-offset-2 text-center">
+						<%= form_tag('', method: "get") do %>
+						  <%= label_tag(:q, "Search by Month & Year") %>
+						  <%= month_field_tag(:q) %>
+						  <%= submit_tag("Search") %>
+						<% end %>
+						<h2>Today's date: <%= Time.now.strftime("%b %d, %Y") %></h2>
+
+				<div class='chart responsive center-block'>
+					<canvas id="myChart" class="chart responsive text-center" width="400" height="400"></canvas>
+				</div>
+				<br>
+				<button class = 'btn btn-primary' href='#modal-id3' data-toggle="modal" id='additem'>Add Item</button>
+				<button class="btn btn-primary" data-toggle="modal" href='#modal-id'>View all</button>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<div class="section">
+  <div class="row">
 		<div class="budget">
 			<div class="col-sm-8 col-sm-offset-2 text-center">
 
@@ -107,24 +116,27 @@
 	       										<% else %>
 	       												of budget
 	       										<% end %>" 
-	          	data-title="SUNY Buffalo" data-dates="2005 - 2010" style="width: 272px; height: 272px;">
+	          	data-title="Budget" style="width: 272px; height: 272px;">
 	       </div>  
 	                
 			</ul>
-	
 				<p><h1>Your monthly budget is <%= number_to_currency(current_user.budget) %></h1></p>
 				<!-- <p>		Budget to expense ratio: <%= current_user.budget.to_f /  @total_expenses.to_f %>
 				</p> -->
 
-				<p> <h3> AND </h3></p>
-				
+				<p><h3> AND </h3></p>
 					<% if current_user.budget > @total_expenses %>
-								<p><h2> There is <%= number_to_currency(@budget.to_f - @total_expenses.to_f) %> left in your budget</h2></p>
+								<p><h1> There is <%= number_to_currency(@budget.to_f - @total_expenses.to_f) %> left in your budget</h1></p>
 						<% elsif %>
-							   <p><h2>You are OVER budget by <%= number_to_currency(@total_expenses.to_f - @budget.to_f) %></h2></p>
+							   <p><h1>You are <%= number_to_currency(@total_expenses.to_f - @budget.to_f) %> 
+							  <u><i>OVER</i></u> budget </h1></p>
 						<%else%>
-								 <p><h2>Please edit your budget</h2></p>
+								 <p><h1>Please edit your budget</h1></p>
 					<% end %>
+					</div>
+				</div>
 				</div>
 			</div>
-		</div>
+
+</div>
+	
