@@ -4,8 +4,7 @@
 
 
 
-.main {
-
+	.main {
 		.btn-xlarge {
 	    padding: 18px 28px;
 	    font-size: 22px;
@@ -13,7 +12,12 @@
 	    margin: 19px 0;
 	    line-height: normal;
 	    border: none;	
-    }
+  }
+
+
+	.navbar-right{
+		padding-right: 40px;
+	}
 
 
 	h1#titlebankly {
@@ -55,10 +59,14 @@
     transform: rotate(135deg);
   	}
 
-  	.navbar-brand {
-  		color: black;
-  		font-family: "Anton";
-  	}
+	.navbar-brand {
+		color: black;
+		font-family: "Anton";
+	}
+
+	#pad-right {
+		margin-right: 25px !important;
+	}
 
 	p {
 		margin-top: -1px;
@@ -181,6 +189,9 @@
 	}
 	#arrow {
 		display: none;
+	}
+	#bankly{
+		padding-left: 1px;
 	}
 }
 

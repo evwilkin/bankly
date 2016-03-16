@@ -36,6 +36,18 @@ $navbar-default-link-active-bg: white !default;
 #bankly {
 	font-family: "Anton";
 	font-size: 4rem;
+	margin-left: 40px;
 }
 
+.navbar-right{
+	padding-right: 40px;
+}
 
+@media(max-width:800px) {
+	#bankly {
+		margin-left: 0px;
+	}
+	.navbar-right{
+		padding-right: 0px;
+	}
+}
