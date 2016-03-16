@@ -1,5 +1,5 @@
-== README
-__Technologies Used__
+#Bankly
+##Technologies Used
 * HTML5/CSS3 
 * SASS
 * JavaScript
@@ -14,16 +14,16 @@ __Technologies Used__
 * Heroku
 * GitHub
 
-__General Approach__
+##General Approach
 
 
-__User stories__
+##User stories
 
 * As a user I want to be able to record and have visual representation of my spending.
 * As a user I want to be able to record and visualize my spending across many months.
 * As a user I want to keep organized and be able to add, edit, and delete my monthly purchases.
 
-__Unsolved problems__
+##Unsolved problems
 
 
 
