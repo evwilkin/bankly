@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	
   <title>Bankly</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <link href='https://fonts.googleapis.com/css?family=Paytone+One' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Arya' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
   <meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -26,13 +23,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-    <% end %>
       <a class="navbar-brand" href="/" id="bankly">Bankly</a>
+    <% end %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right" id='pad-right'>
         <% if @current_user %>
           <li class="<%= 'active' if params[:controller] == 'dashboard' %>"><a href="/dashboard">Dashboard</a></li>
           <li class="<%= 'active' if params[:controller] == 'line_items' %>"><a href="/items/show">My Items</a></li>
