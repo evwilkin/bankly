@@ -7,6 +7,7 @@ class DashboardController < ApplicationController
     @current_month = Time.now.strftime("%m")
     @current_year = Time.now.strftime("%Y")
     @total_expenses = 0
+    @budget = current_user.budget
     if (params['q'])
       @year = params['q'].split("-")[0]
       @month = params['q'].split("-")[1]
