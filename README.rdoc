@@ -1,5 +1,5 @@
 == README
-**Technologies Used**
+__Technologies Used__
 * HTML5/CSS3 
 * SASS
 * JavaScript
@@ -14,16 +14,16 @@
 * Heroku
 * GitHub
 
-**General Approach**
+__General Approach__
 
 
-**User stories**
+__User stories__
 
-+ As a user I want to be able to record and have visual representation of my spending.
-+ As a user I want to be able to record and visualize my spending across many months.
-+ As a user I want to keep organized and be able to add, edit, and delete my monthly purchases.
+* As a user I want to be able to record and have visual representation of my spending.
+* As a user I want to be able to record and visualize my spending across many months.
+* As a user I want to keep organized and be able to add, edit, and delete my monthly purchases.
 
-**Unsolved problems**
+__Unsolved problems__
 
 
 
