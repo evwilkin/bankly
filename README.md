@@ -1,5 +1,5 @@
 #Bankly
-###Technologies Used
+**Technologies Used**
 
 * HTML5/CSS3 
 * SASS
@@ -17,16 +17,25 @@
 
 **General Approach**
 
-
+* Brainstormed as a group, and agreed on an app idea
+* Created wireframes for the front end and data base schema 
+* Assigned roles within the group 
+* Practiced pair programming to create the foundation of the app
+* Created databases 
+* Built the routes/controllers to address functionality in the app
+* Implemented user authentication
+* Connected backend data to front end in order to display charts
+* Branched off and worked individually on different functionalities on the app
+* Committed frequently and addressed merge conflicts
 
 **User stories**
 
-+ As a user I want to be able to record and have visual representation of my spending.
-+ As a user I want to be able to record and visualize my spending across many months.
-+ As a user I want to keep organized and be able to add, edit, and delete my monthly purchases.
+* As a user I want to be able to record and have visual representation of my spending.
+* As a user I want to be able to record and visualize my spending across many months.
+* As a user I want to keep organized and be able to add, edit, and delete my monthly purchases.
 
 **Unsolved problems**
 
 
 
-![alt tag](images/frontendbankly.jpg)
+![alt tag](/images/frontendbankly.jpg)
