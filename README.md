@@ -44,4 +44,6 @@
 * Overriding bootstrap styles
 
 
-![alt tag](assets/images/frontendbankly.jpg)
+![alt tag](app/assets/images/frontendbankly.jpg)
+
+
