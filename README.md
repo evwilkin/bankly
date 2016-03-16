@@ -45,6 +45,6 @@
 
 
 ![alt tag](app/assets/images/frontendbankly_copy.jpg)
-![alt tag](app/assets/images/img_3310.jpg)
+![alt tag](app/assets/images/img_3310_copy.jpg)
 
 
